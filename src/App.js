@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 import './App.css';
 import key from './APIKey';
 import data from './APIPracticeData';
+import CurrentWeather from './CurrentWeather';
+import HourlyWeather from './HourlyWeather';
+import WeatherDisplayWrapper from './WeatherDisplayWrapper';
 
 export default class App extends Component {
   constructor() {
@@ -39,7 +42,5 @@ export default class App extends Component {
       </div>
     );
   }
-
-
 
 }
