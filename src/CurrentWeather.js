@@ -14,16 +14,16 @@ export default class CurrentWeather extends Component {
 
     return (
         <li>
-          <p>
+          <h3>
             //Date and Time
-          </p>
-          <h1>
+          </h3>
+          <h2>
             //Current City
-          </h1>
+          </h2>
           <img />
-          <p>
+          <h1>
             //CurrentTemp
-          </p>
+          </h1>
           <p>
             //description of CurrentWeather
           </p>

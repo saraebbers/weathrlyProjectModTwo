@@ -14,9 +14,13 @@ export default class HourlyWeather extends Component {
 
     return (
         <li>
-          <p>
-
-          </p>
+          <img />
+          <h3>
+            //current temp
+          </h3>
+          <h4>
+            //time
+          </h4>
         </li>
       )
   }
