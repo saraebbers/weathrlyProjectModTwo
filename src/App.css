@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.backgroundDefault {
+  background-image: '../assests/lightning-weatherly.jpg';
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
