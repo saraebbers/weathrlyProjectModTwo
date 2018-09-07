@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
 export default class HourlyWeather extends Component {
@@ -26,3 +27,21 @@ export default class HourlyWeather extends Component {
   }
 
 }
+=======
+import React from 'react';
+
+import './CurrentWeather';
+import './Daily.css';
+
+const Daily = (props) => {
+  return(
+      <div>
+
+      </div>
+
+
+    )
+}
+
+export default Daily;
+>>>>>>> bfba1486a6ea99b46b65335a3cc6024e42dbfb11
