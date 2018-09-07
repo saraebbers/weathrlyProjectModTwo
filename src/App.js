@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 
 import './App.css';
 import key from './APIKey';
 import data from './APIPracticeData';
-import CurrentWeather from './CurrentWeather';
-import HourlyWeather from './HourlyWeather';
-import WeatherDisplayWrapper from './WeatherDisplayWrapper';
-import Form from './Form';
+import clean from './Helper';
 
 export default class App extends Component {
   constructor() {
@@ -19,22 +15,27 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    const cleanData = clean(data);
+    //const something = what we are fetching 
     // fetch(enter https)
-      .then(response => response.json())
+    //   .then(response => response.json())
       // .then(weather => {
       //   connect as appropriate
       // })
-      .catch(error => {
-        console.log(error);
-      })
+      // .catch(error => {
+      //   console.log(error);
+      // })
+      this.setState({ weatherData: cleanData })
+
   }
+
+
 
 
   render() {
     return (
       <div className="App">
-        <Form />
-        <WeatherDisplayWrapper />
+
       </div>
     );
   }
