@@ -10,7 +10,7 @@ export default class App extends Component {
     super();
 
     this.state = {
-      //insert state here and initialize as needed
+      weatherData: {},
     }
   }
 
