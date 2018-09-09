@@ -1,6 +1,6 @@
 function clean(dataFromAPI) {
   
-  const {display_location, temp_f, observation_time, weather, relative_humidity, icon_url} = dataFromAPI.current_observation;
+  const {display_location, temp_f, observation_time, weather, relative_humidity, icon_url, precip_today_in} = dataFromAPI.current_observation;
 
   return {
     currentWeather: {
@@ -9,7 +9,8 @@ function clean(dataFromAPI) {
       dateTime: observation_time,
       desc: weather,
       humidity: relative_humidity,
-      icon: icon_url
+      icon: icon_url,
+      precipToday: precip_today_in
     },
 
     hourlyWeather: 

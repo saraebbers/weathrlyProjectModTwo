@@ -4,6 +4,7 @@ import './App.css';
 // import key from './APIKey';
 import data from './APIPracticeData';
 import clean from './Helper';
+import { CurrentWeather } from './CurrentWeather';
 
 export default class App extends Component {
   constructor() {
@@ -36,6 +37,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className='background'> </div>
+        <CurrentWeather 
+          currentWeather={this.state.weatherData.currentWeather} />
+
       </div>
     );
   }
