@@ -4,7 +4,7 @@ import { HourlyCard } from './HourlyCard.js'
 
 export const Hourly = (props) => {
   return (
-    <div>
+    <div className='Hourly'>
       <p>
         {
           props.hourlyWeather.map((hour, index) => {

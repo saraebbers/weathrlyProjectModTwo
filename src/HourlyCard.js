@@ -4,7 +4,7 @@ import React from 'react';
 export const HourlyCard = (props) =>{
   const {icon, temp, time} = props.hourlyWeather;
   return (
-    <div>
+    <div className='HourlyCard'>
       <img src={icon} />
       <p> Temperature: {temp}</p>
       <p>Time: {time}</p>

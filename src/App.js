@@ -5,7 +5,7 @@ import './App.css';
 import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
-// import { Search } from './Search';
+import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly'
 
@@ -37,21 +37,22 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <Search />
         <h1>Weather</h1>
         {
         this.state.weatherData.currentWeather &&
-        <CurrentWeather 
+        <CurrentWeather className='left'
           currentWeather={this.state.weatherData.currentWeather} />
         }
 
         {
         this.state.weatherData.tenDay &&
-        <TenDayWeather
+        <TenDayWeather className='right'
           tenDay={this.state.weatherData.tenDay} />
         }
         {
         this.state.weatherData.hourlyWeather &&
-        <Hourly
+        <Hourly className='bottom'
           hourlyWeather={this.state.weatherData.hourlyWeather} />
         }
       
