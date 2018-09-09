@@ -2,10 +2,8 @@
   text-align: center;
   margin: auto;
   box-sizing: border-box;
-}
-
-.backgroundDefault {
-  background-image: '..assests/lightning-weatherly.jpg';
+  background: url('./assests/lightning-weatherly.jpg');
+  height: 100vh;
   background-size: cover;
   background-position: center;
   width: 100%;

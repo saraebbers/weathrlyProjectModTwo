@@ -36,12 +36,9 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className='background'> </div>
         <CurrentWeather 
           currentWeather={this.state.weatherData.currentWeather} />
-         
-
-
-
 
       </div>
     );
