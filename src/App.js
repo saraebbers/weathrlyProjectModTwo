@@ -36,9 +36,11 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Weather</h1>
+        {
+        this.state.weatherData.currentWeather &&
         <CurrentWeather 
           currentWeather={this.state.weatherData.currentWeather} />
-
+        }
       </div>
     );
   }
