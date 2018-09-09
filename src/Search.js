@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import './Search.css';
 
-export const Search = (props) => {
-  return (
-    <div>
-      <p>Search Bar</p>
+export default class Search extends Component {
+  constructor() {
+    super();
 
-    </div>
-    )
+    this.state = {
+      cityZip: 0
+    }
+  }
+
+  render() {
+    return (
+      <form>
+        <input
+          type='number'
 
 
-} 
+
+         />
+        <button>
+          onClick={(event) => {
+            event.preventDefault();
+
+          }}
+
+        </button>
+
+
+      </form>
+
+
+      )
+  }
+}
+
+
