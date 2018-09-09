@@ -7,11 +7,21 @@
   background-size: cover;
   background-position: center;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-rows: 4;*/
+  grid-template-areas: 
+    'Search Search Search'
+    'CurrentWeather CurrentWeather TenDayWeather'
+    'CurrentWeather CurrentWeather TenDayWeather'
+    'Hourly Hourly TenDayWeather' 
 }
 
 h1 {
   color: white;
 }
+
+
 
 
 

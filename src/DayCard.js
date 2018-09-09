@@ -4,7 +4,7 @@ import './DailyCard.css';
 export const DayCard = (props) => {
 const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
   return (
-    <div>
+    <div className='DayCard'>
       <p>{dayOfWeek}</p>
       <img src={icon} />
       <p>High: {high}</p>

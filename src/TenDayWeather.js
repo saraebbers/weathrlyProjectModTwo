@@ -6,7 +6,7 @@ export const TenDayWeather = (props) => {
   // const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
   console.log(props.tenDay)
   return(
-    <div>
+    <div className='TenDayWeather'>
       <p> 
         {
           props.tenDay.map((day, index) => {

@@ -4,7 +4,7 @@ import './CurrentWeather.css';
 export const CurrentWeather = (props) => {
   const {location, temp, dateTime, desc, humidity, icon, precipToday} = props.currentWeather;
   return (
-    <div>
+    <div className='CurrentWeather'>
       <p>{location}</p>
       <p>Current Temperature: {temp} F</p>
       <p>{dateTime}</p>
