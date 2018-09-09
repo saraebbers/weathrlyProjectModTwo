@@ -7,6 +7,7 @@ import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
 // import { Search } from './Search';
 import { TenDayWeather } from './TenDayWeather';
+import { Hourly } from './Hourly'
 
 export default class App extends Component {
   constructor() {
@@ -47,6 +48,11 @@ export default class App extends Component {
         this.state.weatherData.tenDay &&
         <TenDayWeather
           tenDay={this.state.weatherData.tenDay} />
+        }
+        {
+        this.state.weatherData.hourlyWeather &&
+        <Hourly
+          hourlyWeather={this.state.weatherData.hourlyWeather} />
         }
       
       </div>
