@@ -6,6 +6,7 @@ import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
 // import { Search } from './Search';
+import { TenDayWeather } from './TenDayWeather';
 
 export default class App extends Component {
   constructor() {
@@ -41,6 +42,13 @@ export default class App extends Component {
         <CurrentWeather 
           currentWeather={this.state.weatherData.currentWeather} />
         }
+
+        {
+        this.state.weatherData.tenDay &&
+        <TenDayWeather
+          tenDay={this.state.weatherData.tenDay} />
+        }
+      
       </div>
     );
   }
