@@ -5,6 +5,7 @@ import './App.css';
 import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
+import { Search } from './Search';
 
 export default class App extends Component {
   constructor() {
@@ -31,14 +32,13 @@ export default class App extends Component {
   }
 
 
-
-
   render() {
     return (
       <div className="App">
-        <div className='background'> </div>
+        <h1>Weather</h1>
         <CurrentWeather 
           currentWeather={this.state.weatherData.currentWeather} />
+        <Search />
 
       </div>
     );
