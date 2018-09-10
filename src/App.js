@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 // import key from './APIKey';
-import data from './APIPracticeData';
+// import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
 import Search from './Search';
@@ -19,16 +19,18 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    const cleanData = clean(data);
-    //const something = what we are fetching 
-    // fetch(enter https)
-    //   .then(response => response.json())
-      // .then(weather => {
-      //   connect as appropriate
-      // })
-      // .catch(error => {
-      //   console.log(error);
-      // })
+    let cleanData;
+    let usState;
+    let usCity;
+
+    fetch(`http://api.wunderground.com/api/881631f063e09bd3/forecast/q/{usState}/{usCity}.json`)
+      .then(response => response.json())
+      .then(weather => {
+        cleanData = clean(weather);
+      })
+      .catch(error => {
+        console.log(error);
+      })
       this.setState({ weatherData: cleanData })
 
   }
