@@ -43,6 +43,10 @@ export default class Search extends Component {
           onClick={(event) => {
             event.preventDefault();
             this.submitLocation();
+            this.setState({
+              usState: '',
+              usCity: ''
+            })
           }}
         > Submit Location
         </button>
