@@ -5,7 +5,7 @@ import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
-// import Search from './Search';
+import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly'
 
@@ -15,28 +15,43 @@ export default class App extends Component {
 
     this.state = {
       weatherData: {},
+      usState: '',
+      usCity: '',
     }
+    this.resetLocation = this.resetLocation.bind(this);
   }
 
   componentDidMount() {
-    let usState = 'MA'
-    let usCity = 'Boston'
-
-    fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${usState}/${usCity}.json`)
+    fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => this.setState({ weatherData: cleanData }))
       .catch(error => {
         console.log(error);
       })
+  }
 
+  resetLocation(state) {
+    this.setState({
+      usCity: state.usCity,
+      usState: state.usState
+    })
+      fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
+      .then(response => response.json())
+      .then(weather => clean(weather))
+      .then(cleanData => this.setState({ weatherData: cleanData }))
+      .catch(error => {
+        console.log(error);
+      })
   }
 
 
   render() {
     return (
       <div className="App">
-
+        <Search 
+          resetLocation={this.resetLocation}
+            />
         <h1>Weather</h1>
         {
         this.state.weatherData.currentWeather &&

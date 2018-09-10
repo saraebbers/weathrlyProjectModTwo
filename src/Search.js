@@ -6,31 +6,49 @@ export default class Search extends Component {
     super();
 
     this.state = {
-      usState = '',
-      usCity = '',
+      usState: '',
+      usCity: '',
     }
+  }
+
+  submitLocation() {
+     this.props.resetLocation(this.state);;
   }
 
   render() {
     return (
-      <form className='Search'>
+      <form 
+        className='Search'>
         <input 
           placeholder='Enter US City Here'
           type='text'
           value={this.state.usCity}
           onChange={(event) => {
             this.setState({
-              usCity: 
+              usCity: event.target.value
             })
           }}
          />
-        <button > CLICK HERE 
+        <input 
+          placeholder='Enter US State Here'
+          type='text'
+          value={this.state.usState}
+          onChange={(event) => {
+            this.setState({
+              usState: event.target.value
+            })
+          }}
+         /> 
+        <button
+          onClick={(event) => {
+            event.preventDefault();
+            this.submitLocation();
+          }}
+        > Submit Location
         </button>
-
       </form>
 
-
-      )
+      );
   }
 }
 
