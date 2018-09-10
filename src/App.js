@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import './App.css';
-// import key from './APIKey';
+import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
-import Search from './Search';
+// import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly'
 
@@ -19,19 +19,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let cleanData;
-    let usState;
-    let usCity;
+    let usState = 'MA'
+    let usCity = 'Boston'
 
-    fetch(`http://api.wunderground.com/api/881631f063e09bd3/forecast/q/{usState}/{usCity}.json`)
+    fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${usState}/${usCity}.json`)
       .then(response => response.json())
-      .then(weather => {
-        cleanData = clean(weather);
-      })
+      .then(weather => clean(weather))
+      .then(cleanData => this.setState({ weatherData: cleanData }))
       .catch(error => {
         console.log(error);
       })
-      this.setState({ weatherData: cleanData })
 
   }
 
@@ -39,7 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search />
+
         <h1>Weather</h1>
         {
         this.state.weatherData.currentWeather &&

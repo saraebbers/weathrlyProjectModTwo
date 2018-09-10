@@ -6,7 +6,8 @@ export default class Search extends Component {
     super();
 
     this.state = {
-      cityZip: 0,
+      usState = '',
+      usCity = '',
     }
   }
 
@@ -14,7 +15,14 @@ export default class Search extends Component {
     return (
       <form className='Search'>
         <input 
-          type='number'
+          placeholder='Enter US City Here'
+          type='text'
+          value={this.state.usCity}
+          onChange={(event) => {
+            this.setState({
+              usCity: 
+            })
+          }}
          />
         <button > CLICK HERE 
         </button>
