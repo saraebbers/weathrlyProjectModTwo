@@ -31,6 +31,8 @@ function clean(dataFromAPI) {
           low: eachDay.low.fahrenheit,
           precipitation: eachDay.qpf_allday.in,
           snow: eachDay.snow_allday.in,
+          forcastTxt: eachDay.fcttext_metric,
+          
         }
       }),
   }

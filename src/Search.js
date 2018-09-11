@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Search.css';
+import Trie from '@slebbers/boilerplate';
+import locationData from './largest1000Cities';
+
 
 export default class Search extends Component {
   constructor() {
@@ -14,6 +17,7 @@ export default class Search extends Component {
   submitLocation() {
      this.props.resetLocation(this.state);;
   }
+  
 
   render() {
     return (

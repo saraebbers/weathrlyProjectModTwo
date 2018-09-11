@@ -12,6 +12,12 @@ export const CurrentWeather = (props) => {
       <p>Humidity: {humidity}</p>
       <img src={icon} />
       <p>Precipitation Today: {precipToday}</p>
+      
+      <p>day of week </p>
+
+     
+      <p>high/low: {} / {}</p>
+      <p>summary: {} </p>
     </div>
     )
 
