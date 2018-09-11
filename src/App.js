@@ -39,7 +39,10 @@ export default class App extends Component {
       fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
-      .then(cleanData => this.setState({ weatherData: cleanData }))
+      .then(cleanData => {
+        this.setState({ weatherData: cleanData })
+        localStorage.setItem('weather': cleanData)
+      })
       .catch(error => {
         console.log(error);
       })
