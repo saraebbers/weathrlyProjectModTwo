@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-// import key from './APIKey';
+import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
@@ -24,15 +24,13 @@ export default class App extends Component {
   componentDidMount() {
     let storedCity = localStorage.getItem('usCity');
     let storedState = localStorage.getItem('usState');
-    var bob;
-    if (storedCity === null){
-      bob =  `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`
+    var initialSearchLocation;
+    if (storedCity === null || storedState === null){
+      initialSearchLocation =  `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`
     } else {
-      bob = `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
+      initialSearchLocation = `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
     }
-    console.log(bob);
-    let storedLocation = `${storedState}'/'${storedCity}` || 'autoip';  
-    fetch(bob)
+    fetch(initialSearchLocation)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => this.setState({ weatherData: cleanData }))
