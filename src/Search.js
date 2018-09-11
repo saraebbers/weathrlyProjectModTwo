@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Search.css';
-import Trie from '@slebbers/boilerplate';
-import locationData from './largest1000Cities';
+// import Trie from '@slebbers/boilerplate';
+// import locationData from './largest1000Cities';
 
 
 export default class Search extends Component {
@@ -17,7 +17,7 @@ export default class Search extends Component {
   submitLocation() {
      this.props.resetLocation(this.state);;
   }
-  
+
 
   render() {
     return (
@@ -44,6 +44,16 @@ export default class Search extends Component {
             })
           }}
          /> 
+         <div>
+          <p>
+            Possible Suggestions
+          </p>
+          { (this.props.trie.wordCount > 0 && this.state.usCity.length > 0) &&
+            this.props.trie.suggest(this.state.usCity).map(word => {
+            return <p>{word}</p>
+          })
+          }
+         </div>
         <button
           onClick={(event) => {
             event.preventDefault();
