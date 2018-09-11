@@ -1,0 +1,16 @@
+.DayCard {
+  border: red solid 2px;
+  margin: 10px;
+  color: red;
+  background-color: #DADFC4;
+  opacity: .75;
+  font-size: 1rem;
+  line-height: .75rem;
+  display: grid;
+  grid-template-columns: 3;
+}
+.detail {
+  display: flex;
+ /* flex-direction: space-between;*/
+ justify-content: space-around;
+}

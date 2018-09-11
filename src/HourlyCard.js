@@ -1,5 +1,5 @@
 import React from 'react';
-// import './HourlyCard.css';
+import './HourlyCard.css';
 
 export const HourlyCard = (props) =>{
   const {icon, temp, time} = props.hourlyWeather;
