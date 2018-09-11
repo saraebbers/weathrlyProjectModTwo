@@ -1,3 +1,4 @@
 .Hourly {
   grid-area: Hourly;
+  display: inline-block;
 }

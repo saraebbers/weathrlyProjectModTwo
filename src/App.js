@@ -34,7 +34,7 @@ export default class App extends Component {
   resetLocation(state) {
     this.setState({
       usCity: state.usCity,
-      usState: state.usState
+      usState: state.usState,
     })
       fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
       .then(response => response.json())
@@ -50,6 +50,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Search 
+          className='reset'
           resetLocation={this.resetLocation}
             />
         <h1>Weather</h1>

@@ -2,7 +2,7 @@
   text-align: center;
   margin: auto;
   box-sizing: border-box;
-  background: url('./assests/lightning-weatherly.jpg');
+  background: url('https://source.unsplash.com/collection/3106408/1600x900');
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -20,10 +20,6 @@
 h1 {
   color: white;
 }
-
-
-
-
 
 
 @keyframes App-logo-spin {

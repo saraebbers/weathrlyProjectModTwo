@@ -1,5 +1,5 @@
 import React from 'react';
-import './DailyCard.css';
+import './DayCard.css';
 
 export const DayCard = (props) => {
 const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
@@ -7,10 +7,14 @@ const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
     <div className='DayCard'>
       <p>{dayOfWeek}</p>
       <img src={icon} />
-      <p>High: {high}</p>
-      <p>Low: {low}</p>
-      <p>Precipitation: {precipitation}</p>
-      <p>Snow: {snow}</p>
+      <div className='detail'>
+        <p>High: {high}</p>
+        <p>Low: {low}</p>
+      </div>
+      <div className='detail'>
+        <p>Precipitation: {precipitation}</p>
+        <p>Snow: {snow}</p>
+      </div>
     </div>
     )
 }
