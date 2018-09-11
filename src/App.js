@@ -53,7 +53,7 @@ export default class App extends Component {
           className='reset'
           resetLocation={this.resetLocation}
             />
-        <h1>Weather</h1>
+        <h1 className='Title'>Weatherly</h1>
         {
         this.state.weatherData.currentWeather &&
         <CurrentWeather className='left'

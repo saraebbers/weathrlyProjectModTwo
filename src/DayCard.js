@@ -5,15 +5,13 @@ export const DayCard = (props) => {
 const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
   return (
     <div className='DayCard'>
-      <p>{dayOfWeek}</p>
-      <img src={icon} />
       <div className='detail'>
-        <p>High: {high}</p>
-        <p>Low: {low}</p>
+        <img src={icon} />
+        <h2>{dayOfWeek}</h2>
       </div>
       <div className='detail'>
-        <p>Precipitation: {precipitation}</p>
-        <p>Snow: {snow}</p>
+        <p>high / low: {high} / {low}</p>
+      <p>Precipitation: {precipitation}</p>
       </div>
     </div>
     )

@@ -2,23 +2,26 @@
   text-align: center;
   margin: auto;
   box-sizing: border-box;
-  background: url('https://source.unsplash.com/collection/3106408/1600x900');
+  background: url('https://source.unsplash.com/collection/3106781/1600x900');
   height: 100vh;
   background-size: cover;
   background-position: center;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1.25fr;
   /*grid-template-rows: 4;*/
   grid-template-areas: 
-    'Search Search Search'
-    'CurrentWeather CurrentWeather TenDayWeather'
+    'Title Search TenDayWeather'
     'CurrentWeather CurrentWeather TenDayWeather'
     'Hourly Hourly TenDayWeather' 
 }
 
 h1 {
   color: white;
+}
+
+.title {
+grid-area: text;
 }
 
 

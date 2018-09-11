@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Hourly.css';
+import './Hourly.css';
 import { HourlyCard } from './HourlyCard.js'
 
 export const Hourly = (props) => {
