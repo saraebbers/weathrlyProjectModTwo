@@ -19,6 +19,7 @@ export default class Search extends Component {
     return (
       <form 
         className='Search'>
+        <p>Search By City/State or ZipCode </p>
         <input 
           placeholder='Enter US City Here'
           type='text'
@@ -45,11 +46,12 @@ export default class Search extends Component {
             this.submitLocation();
             this.setState({
               usState: '',
-              usCity: ''
+              usCity: '', 
             })
           }}
         > Submit Location
         </button>
+
       </form>
 
       );

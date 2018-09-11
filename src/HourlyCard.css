@@ -1,0 +1,7 @@
+.HourlyCard {
+  height: 150px;
+  width: 50 px;
+  border: red solid 2px;
+  margin: 10px;
+  display: inline-block;
+}
