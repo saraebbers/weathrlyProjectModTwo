@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import key from './APIKey';
+// import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
@@ -22,7 +22,17 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`)
+    let storedCity = localStorage.getItem('usCity');
+    let storedState = localStorage.getItem('usState');
+    var bob;
+    if (storedCity === null){
+      bob =  `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`
+    } else {
+      bob = `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
+    }
+    console.log(bob);
+    let storedLocation = `${storedState}'/'${storedCity}` || 'autoip';  
+    fetch(bob)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => this.setState({ weatherData: cleanData }))
@@ -39,7 +49,13 @@ export default class App extends Component {
       fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
-      .then(cleanData => this.setState({ weatherData: cleanData }))
+      .then(cleanData => {
+        this.setState({ weatherData: cleanData })
+        localStorage.setItem('usState', this.state.usState)
+        localStorage.setItem('usCity', this.state.usCity)
+
+
+      })
       .catch(error => {
         console.log(error);
       })
