@@ -31,9 +31,9 @@ export default class App extends Component {
     this.state.trie.populate(locationData);
     console.log(this.state.trie);
     if (storedCity === null || storedState === null){
-      initialSearchLocation =  `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`
+      initialSearchLocation =  `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/autoip.json`
     } else {
-      initialSearchLocation = `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
+      initialSearchLocation = `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
     }
     fetch(initialSearchLocation)
       .then(response => response.json())
@@ -56,14 +56,11 @@ export default class App extends Component {
         this.setState({ weatherData: cleanData })
         localStorage.setItem('usState', this.state.usState)
         localStorage.setItem('usCity', this.state.usCity)
-
-
       })
       .catch(error => {
         console.log(error);
       })
   }
-
 
   render() {
     return (
