@@ -15,8 +15,3 @@ const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
     </div>
     )
 }
-
-
-// <p className='high-low-precip'>Precipitation: {precipitation}</p>
-
-

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-// import key from './APIKey';
+import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
@@ -17,23 +17,22 @@ export default class App extends Component {
 
     this.state = {
       weatherData: {},
-      usState: '',
-      usCity: '',
+      usLocation: '',
       trie: new Trie(),
     }
     this.resetLocation = this.resetLocation.bind(this);
   }
 
   componentDidMount() {
-    let storedCity = localStorage.getItem('usCity');
-    let storedState = localStorage.getItem('usState');
+    let storedLocation = localStorage.getItem('usLocation');
+    // let storedState = localStorage.getItem('usState');
     var initialSearchLocation;
     this.state.trie.populate(locationData);
     console.log(this.state.trie);
-    if (storedCity === null || storedState === null){
+    if (storedLocation === null){
       initialSearchLocation =  `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/autoip.json`
     } else {
-      initialSearchLocation = `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
+      initialSearchLocation = `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${storedLocation}.json`
     }
     fetch(initialSearchLocation)
       .then(response => response.json())
@@ -46,16 +45,16 @@ export default class App extends Component {
 
   resetLocation(state) {
     this.setState({
-      usCity: state.usCity,
-      usState: state.usState,
+      // usCity: state.usCity,
+      usLocation: state.usLocation,
     })
-      fetch(`http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
+      fetch(`http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${state.usLocation}.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => {
         this.setState({ weatherData: cleanData })
-        localStorage.setItem('usState', this.state.usState)
-        localStorage.setItem('usCity', this.state.usCity)
+        localStorage.setItem('usState', this.state.usLocation)
+        // localStorage.setItem('usCity', this.state.usCity)
       })
       .catch(error => {
         console.log(error);

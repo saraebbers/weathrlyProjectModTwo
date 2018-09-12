@@ -14,7 +14,6 @@ export const Hourly = (props) => {
 
       </p>
 
-
     </div>
     )
 }

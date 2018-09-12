@@ -9,7 +9,6 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1.25fr;
-  /*grid-template-rows: 4;*/
   grid-template-areas: 
     'Title Search TenDayWeather'
     'CurrentWeather CurrentWeather TenDayWeather'
