@@ -1,5 +1,11 @@
 .CurrentWeather {
   grid-area: CurrentWeather;
   color: green;
-  font-size: 2rem;
+  /*font-size: 2rem;*/
+
+}
+
+.location {
+  
+
 }

@@ -1,7 +1,15 @@
 .HourlyCard {
-  height: 150px;
-  width: 50 px;
   border: red solid 2px;
   margin: 10px;
   display: inline-block;
+}
+
+.time-temp {
+  font-size: .75em;
+  margin: 0;
+}
+
+.condition-icon {
+  width: 25px;
+  margin: 0;
 }

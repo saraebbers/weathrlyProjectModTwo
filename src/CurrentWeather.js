@@ -5,15 +5,17 @@ export const CurrentWeather = (props) => {
   const {location, temp, dateTime, desc, humidity, icon, precipToday} = props.currentWeather;
   return (
     <div className='CurrentWeather'>
-      <p>{location}</p>
-      <p>Current Temperature: {temp} F</p>
-      <p>{dateTime}</p>
-      <p>{desc}</p>
-      <p>Humidity: {humidity}</p>
+      <p className='location'>{location}</p>
+      <p className='temp'>{temp} º</p>
+      <p classname='description'>{desc}</p>
+      <p className='update'>{dateTime}</p>
       <img src={icon} />
-      <p>Precipitation Today: {precipToday}</p>
     </div>
     )
 
 
 } 
+
+// <p>Humidity: {humidity}</p>
+// <p>Precipitation Today: {precipToday}</p>
+

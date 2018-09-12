@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import key from './APIKey';
+// import key from './APIKey';
 // import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
