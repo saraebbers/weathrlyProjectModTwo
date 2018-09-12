@@ -40,6 +40,16 @@ export default class Search extends Component {
             })
           }}
          /> 
+         <div>
+          <p>
+            Possible Suggestions
+          </p>
+          { (this.props.trie.wordCount > 0 && this.state.usCity.length > 0) &&
+            this.props.trie.suggest(this.state.usCity).map(word => {
+            return <p>{word}</p>
+          })
+          }
+         </div>
         <button
           onClick={(event) => {
             event.preventDefault();

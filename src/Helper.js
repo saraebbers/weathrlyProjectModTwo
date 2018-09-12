@@ -1,6 +1,7 @@
 function clean(dataFromAPI) {
   
   const {display_location, temp_f, observation_time, weather, relative_humidity, icon_url, precip_today_in} = dataFromAPI.current_observation;
+  const {fcttext} = dataFromAPI.forecast.txt_forecast.forecastday[0];
 
   return {
     currentWeather: {
@@ -10,7 +11,8 @@ function clean(dataFromAPI) {
       desc: weather,
       humidity: relative_humidity,
       icon: icon_url,
-      precipToday: precip_today_in
+      precipToday: precip_today_in,
+      text: fcttext
     },
 
     hourlyWeather: 
@@ -24,6 +26,7 @@ function clean(dataFromAPI) {
 
     tenDay: 
       dataFromAPI.forecast.simpleforecast.forecastday.map(eachDay => {
+        console.log(eachDay);
         return {
           dayOfWeek: eachDay.date.weekday,
           icon: eachDay.icon_url,
@@ -31,6 +34,8 @@ function clean(dataFromAPI) {
           low: eachDay.low.fahrenheit,
           precipitation: eachDay.qpf_allday.in,
           snow: eachDay.snow_allday.in,
+          forecastTxt: eachDay.fcttext_metric,
+          
         }
       }),
   }
