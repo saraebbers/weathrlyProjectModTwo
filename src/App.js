@@ -49,7 +49,7 @@ export default class App extends Component {
       usCity: state.usCity,
       usState: state.usState,
     })
-      fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
+      fetch(`http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => {
