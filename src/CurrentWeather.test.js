@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CurrentWeather from './CurrentWeather';
 import { shallow, mount } from 'enzyme';
+import data from './APIPracticeData';
 
 describe('CurrentWeather', () => {
 

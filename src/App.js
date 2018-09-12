@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import key from './APIKey';
-// import data from './APIPracticeData';
+import data from './APIPracticeData';
 import clean from './Helper';
 import { CurrentWeather } from './CurrentWeather';
 import Search from './Search';
@@ -25,10 +25,9 @@ export default class App extends Component {
 
   componentDidMount() {
     let storedLocation = localStorage.getItem('usLocation');
-    // let storedState = localStorage.getItem('usState');
     var initialSearchLocation;
+
     this.state.trie.populate(locationData);
-    console.log(this.state.trie);
     if (storedLocation === null){
       initialSearchLocation =  `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/autoip.json`
     } else {
@@ -45,7 +44,6 @@ export default class App extends Component {
 
   resetLocation(state) {
     this.setState({
-      // usCity: state.usCity,
       usLocation: state.usLocation,
     })
       fetch(`http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${state.usLocation}.json`)
@@ -53,8 +51,7 @@ export default class App extends Component {
       .then(weather => clean(weather))
       .then(cleanData => {
         this.setState({ weatherData: cleanData })
-        localStorage.setItem('usState', this.state.usLocation)
-        // localStorage.setItem('usCity', this.state.usCity)
+        localStorage.setItem('usLocation', this.state.usLocation)
       })
       .catch(error => {
         console.log(error);
