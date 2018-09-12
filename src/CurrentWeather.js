@@ -9,21 +9,15 @@ export const CurrentWeather = (props) => {
 
   return (
     <div className='CurrentWeather'>
-      <p>{ location }</p>
-      <p>Current Temperature: {temp} F</p>
-      <p>{ dateTime }</p>
-      <p>{ desc }</p>
-      <p>Humidity: { humidity }</p>
-      <img src={icon} />
-      <p>Precipitation Today: { precipToday }</p>
-      
-      <p>day of week </p>
-      <p>{dayOneInfo.dayOfWeek}</p>
-     
+      <p className='location'>{location}</p>
+      <p className='temp'>{temp} º</p>
+      <p classname='description'>{desc}</p>
+      <p className='update'>day of week: {dayOneInfo.dayOfWeek}</p>
       <p>high/low: {dayOneInfo.high} / {dayOneInfo.low}</p>
       <p>summary: {text} </p>
+      <img src={icon} />
     </div>
     )
-
-
 } 
+
+

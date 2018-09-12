@@ -6,14 +6,17 @@ const {dayOfWeek, icon, high, low, precipitation, snow} = props.tenDay;
   return (
     <div className='DayCard'>
       <div className='detail'>
-        <img src={icon} />
-        <h2>{dayOfWeek}</h2>
+        <p>{dayOfWeek}</p>
+        <img className='detail-icon' src={icon} />
       </div>
-      <div className='detail'>
-        <p>high / low: {high} / {low}</p>
-      <p>Precipitation: {precipitation}</p>
+      <div className='temp-detail'>
+        <p className='high-low'>high/low: {high}º/{low}º</p>
       </div>
     </div>
     )
 }
+
+
+// <p className='high-low-precip'>Precipitation: {precipitation}</p>
+
 

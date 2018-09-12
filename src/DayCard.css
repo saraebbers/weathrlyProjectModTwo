@@ -4,13 +4,30 @@
   color: red;
   background-color: #DADFC4;
   opacity: .75;
-  font-size: 1rem;
-  line-height: .75rem;
-  display: grid;
-  grid-template-columns: 3;
+  font-size: 1em;
+  line-height: .5em;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;*/
 }
+
 .detail {
   display: flex;
- /* flex-direction: space-between;*/
- justify-content: space-around;
+  /*flex-direction: column;*/
+  justify-content: center;
+  margin: 0;
+}
+
+.detail-icon {
+  width: 20px;
+  height: 20px; 
+  margin: 10px 0 0 15px;
+  text-align: center;
+}
+
+.temp-detail {
+}
+
+.high-low {
+  margin: 0 0 5px 0;
 }
