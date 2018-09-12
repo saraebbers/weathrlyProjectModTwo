@@ -16,9 +16,4 @@ describe('CurrentWeather', () => {
     expect(wrapper).toBeDefined();
   })
 
-
-
-
-
-
 })
