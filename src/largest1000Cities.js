@@ -1,6 +1,5 @@
 const locationData = 
- {
-  "locationData": [
+ [
     "New York, NY",
     "Los Angeles, CA",
     "Chicago, IL",
@@ -23,7 +22,7 @@ const locationData =
     "Memphis, TN",
     "Seattle, WA",
     "Denver, CO",
-    "Washington, undefined",
+    "Washington, DC",
     "Boston, MA",
     "Nashville, TN",
     "Baltimore, MD",
@@ -1002,5 +1001,5 @@ const locationData =
     "Beloit, WI",
     "Panama City, FL"
   ]
-}
+
 export default locationData;

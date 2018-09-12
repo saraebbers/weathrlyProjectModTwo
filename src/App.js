@@ -9,6 +9,7 @@ import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly';
 import locationData from './largest1000Cities';
+import Trie from '@slebbers/boilerplate'
 
 export default class App extends Component {
   constructor() {
@@ -18,6 +19,7 @@ export default class App extends Component {
       weatherData: {},
       usState: '',
       usCity: '',
+      trie: new Trie(),
     }
     this.resetLocation = this.resetLocation.bind(this);
   }
@@ -26,10 +28,12 @@ export default class App extends Component {
     let storedCity = localStorage.getItem('usCity');
     let storedState = localStorage.getItem('usState');
     var initialSearchLocation;
+    this.state.trie.populate(locationData);
+    console.log(this.state.trie);
     if (storedCity === null || storedState === null){
-      initialSearchLocation =  `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/autoip.json`
+      initialSearchLocation =  `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/autoip.json`
     } else {
-      initialSearchLocation = `http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
+      initialSearchLocation = `http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${storedState}/${storedCity}.json`
     }
     fetch(initialSearchLocation)
       .then(response => response.json())
@@ -45,21 +49,18 @@ export default class App extends Component {
       usCity: state.usCity,
       usState: state.usState,
     })
-      fetch(`http://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
+      fetch(`http://api.wunderground.com/api/${key}/conditions/forecast10day/hourly10day/q/${state.usState}/${state.usCity}.json`)
       .then(response => response.json())
       .then(weather => clean(weather))
       .then(cleanData => {
         this.setState({ weatherData: cleanData })
         localStorage.setItem('usState', this.state.usState)
         localStorage.setItem('usCity', this.state.usCity)
-
-
       })
       .catch(error => {
         console.log(error);
       })
   }
-
 
   render() {
     return (
@@ -67,6 +68,7 @@ export default class App extends Component {
         <Search 
           className='reset'
           resetLocation={this.resetLocation}
+          trie={this.state.trie}
             />
         <h1 className='Title'>Weatherly</h1>
         {
