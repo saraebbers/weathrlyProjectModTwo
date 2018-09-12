@@ -17,7 +17,7 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div> Weatherly
         <form 
           className='Search'>
           <p>Search By City/State or ZipCode </p>

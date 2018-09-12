@@ -9,7 +9,7 @@ import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly';
 import locationData from './largest1000Cities';
-import Trie from '@slebbers/boilerplate'
+import Trie from '@slebbers/boilerplate';
 
 export default class App extends Component {
   constructor() {
