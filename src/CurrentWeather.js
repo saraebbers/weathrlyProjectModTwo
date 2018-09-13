@@ -18,8 +18,8 @@ import './CurrentWeather.css';
         <p className='update'> {dayOneInfo.dayOfWeek} Forecast:</p>
       <div className='day-high-low'>
         <p className='high'>High {dayOneInfo.high},</p>
-        <p className='low'>Low {dayOneInfo.low}</p>
-        <p className='todays-forecast'> {text} </p>
+        <p className='low'>Low {dayOneInfo.low}   Currently </p>
+        <p className='todays-forecast'>{text} </p>
       </div>
     </div>
     )
