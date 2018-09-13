@@ -1,7 +1,7 @@
 import React from 'react';
 import './CurrentWeather.css';
 
- export const CurrentWeather = (props) => {
+ export default function CurrentWeather (props) {
   const {location, temp, dateTime, desc, humidity, icon, precipToday, text} = props.currentWeather;
 
   const dayOneInfo = props.tenDay[0];

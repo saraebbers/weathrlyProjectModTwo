@@ -4,7 +4,7 @@ import './App.css';
 import key from './APIKey';
 import data from './APIPracticeData';
 import clean from './Helper';
-import { CurrentWeather } from './CurrentWeather';
+import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly';
