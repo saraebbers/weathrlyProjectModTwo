@@ -30,13 +30,6 @@ export default class Search extends Component {
               })
             }}
            /> 
-           <div>
-            { (this.props.trie.wordCount > 0 && this.state.usLocation.length > 0) &&
-              this.props.trie.suggest(this.state.usLocation).map(word => {
-                return <input value={word} />
-              })
-            }
-           </div>
           <button
             onClick={(event) => {
               event.preventDefault();
@@ -47,6 +40,13 @@ export default class Search extends Component {
             }}
           > Submit
           </button>
+           <div>
+            { (this.props.trie.wordCount > 0 && this.state.usLocation.length > 1) &&
+              this.props.trie.suggest(this.state.usLocation).map(word => {
+                return <input className='suggest' value={word} />
+              })
+            }
+           </div>
         </form>
       </div>
 
