@@ -1,6 +1,7 @@
 .CurrentWeather {
   grid-area: CurrentWeather;
   color: midnightblue;
+  margin-bottom: 0px;
 
 }
 h1 {
@@ -31,15 +32,17 @@ img {
 
 .update {
   margin-right: 5px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
   margin-top: 10px;
   margin-bottom: 0;
 }
 
-.day-high-low {
+.high-low {
   display: flex;
   justify-content: center;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .high {
@@ -50,6 +53,10 @@ img {
   margin-top: 25px;
   color: midnightblue;
   font-size: 2.5rem
+}
+
+.todays-forecast {
+  margin: 0 55px 0 55px;
 }
 
 

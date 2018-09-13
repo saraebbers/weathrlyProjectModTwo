@@ -16,11 +16,11 @@ import './CurrentWeather.css';
         <img className='icon' src={icon} />
       </div>
         <p className='update'> {dayOneInfo.dayOfWeek} Forecast:</p>
-      <div className='day-high-low'>
-        <p className='high'>High {dayOneInfo.high},</p>
-        <p className='low'>Low {dayOneInfo.low}   Currently </p>
-        <p className='todays-forecast'>{text} </p>
+      <div className='high-low'>
+        <p className='high'>High: {dayOneInfo.high}</p>
+        <p className='low'>Low: {dayOneInfo.low} </p>
       </div>
+        <p className='todays-forecast'>{text} </p>
     </div>
     )
 } 

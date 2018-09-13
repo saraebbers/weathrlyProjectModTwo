@@ -3,7 +3,8 @@
 }
 
 .title {
-  font-family: Tahoma;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
   font-size: 3.5rem;
   margin-top: 25px;
   color: midnightblue;
