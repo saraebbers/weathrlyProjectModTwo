@@ -9,12 +9,21 @@ describe('CurrentWeather', () => {
 
   let wrapper;
 
+  const bob = helper(data);
+  console.log(bob);
+
   beforeEach(() => {
-    wrapper = shallow(<CurrentWeather 
-      currentWeather ={}/>)
+    wrapper = shallow(<CurrentWeather className='left'
+          currentWeather={bob.currentWeather} 
+          tenDay={bob} />)
+
+  // const dayOneInfo = wrapper.props.tenDay;
+
+
   })
 
   it('should exist', () => {
+console.log(wrapper.props.currentWeather)
     expect(wrapper).toBeDefined();
   })
 

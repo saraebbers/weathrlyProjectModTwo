@@ -66,7 +66,6 @@ export default class App extends Component {
           resetLocation={this.resetLocation}
           trie={this.state.trie}
             />
-        <h1 className='Title'>Weatherly</h1>
         {
         this.state.weatherData.currentWeather &&
         <CurrentWeather className='left'
