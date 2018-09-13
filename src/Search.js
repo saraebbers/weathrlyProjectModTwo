@@ -17,12 +17,11 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div> Weatherly
-        <form 
-          className='Search'>
-          <p>Search By City/State or ZipCode </p>
-          <input 
-            placeholder='Enter Location Here'
+      <div className='Search'>
+        <p className='title'>Weatherly</p>
+        <form>
+          <input
+            placeholder='City/State/Zip'
             type='text'
             value={this.state.usLocation}
             onChange={(event) => {
@@ -46,8 +45,7 @@ export default class Search extends Component {
                 usLocation: '',
               })
             }}
-          > 
-          Submit Location
+          > Submit
           </button>
         </form>
       </div>
