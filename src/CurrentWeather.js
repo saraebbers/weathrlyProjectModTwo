@@ -9,13 +9,18 @@ import './CurrentWeather.css';
 
   return (
     <div className='CurrentWeather'>
-      <p className='location'>{location}</p>
-      <p className='temp'>{temp} º</p>
-      <p classname='description'>{desc}</p>
-      <p className='update'>day of week: {dayOneInfo.dayOfWeek}</p>
-      <p>high/low: {dayOneInfo.high} / {dayOneInfo.low}</p>
-      <p>summary: {text} </p>
-      <img src={icon} />
+      <h1 className='location'>{location}</h1>
+        <p className='temp'>{temp} º</p>
+      <div className='icon-description'>
+        <p className='description'>{desc}</p>
+        <img className='icon' src={icon} />
+      </div>
+        <p className='update'> {dayOneInfo.dayOfWeek} Forecast:</p>
+      <div className='day-high-low'>
+        <p className='high'>High {dayOneInfo.high},</p>
+        <p className='low'>Low {dayOneInfo.low}</p>
+        <p className='todays-forecast'> {text} </p>
+      </div>
     </div>
     )
 } 
