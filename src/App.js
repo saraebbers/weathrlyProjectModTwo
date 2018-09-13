@@ -4,7 +4,7 @@ import './App.css';
 import key from './APIKey';
 import data from './APIPracticeData';
 import clean from './Helper';
-import { CurrentWeather } from './CurrentWeather';
+import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import { TenDayWeather } from './TenDayWeather';
 import { Hourly } from './Hourly';
@@ -66,7 +66,6 @@ export default class App extends Component {
           resetLocation={this.resetLocation}
           trie={this.state.trie}
             />
-        <h1 className='Title'>Weatherly</h1>
         {
         this.state.weatherData.currentWeather &&
         <CurrentWeather className='left'

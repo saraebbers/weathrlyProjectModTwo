@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1.25fr;
   grid-template-areas: 
-    'Title Search TenDayWeather'
+    'Search Search TenDayWeather'
     'CurrentWeather CurrentWeather TenDayWeather'
     'Hourly Hourly TenDayWeather' 
 }

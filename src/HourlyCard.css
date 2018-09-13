@@ -2,6 +2,8 @@
   border: red solid 2px;
   margin: 10px;
   display: inline-block;
+  /*display: flex;*/
+  /*flex-direction: row;*/
 }
 
 .time-temp {

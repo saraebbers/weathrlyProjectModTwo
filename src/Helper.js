@@ -26,7 +26,6 @@ function clean(dataFromAPI) {
 
     tenDay: 
       dataFromAPI.forecast.simpleforecast.forecastday.map(eachDay => {
-        console.log(eachDay);
         return {
           dayOfWeek: eachDay.date.weekday,
           icon: eachDay.icon_url,
