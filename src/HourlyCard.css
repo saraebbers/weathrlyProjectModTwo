@@ -1,17 +1,23 @@
 .HourlyCard {
-  border: red solid 2px;
   margin: 10px;
   display: inline-block;
-  /*display: flex;*/
-  /*flex-direction: row;*/
+  margin: 15px 5px;
+  color: midnightblue;
+  background-color: rgba(124, 159, 190, 0.65);
+  font-size: .75rem;
+  line-height: .75rem;
+  padding: 10px;
+
 }
 
 .time-temp {
-  font-size: .75em;
-  margin: 0;
+  font-size: .75rem;
 }
 
 .condition-icon {
   width: 25px;
-  margin: 0;
+  height: 25px; 
+  margin: 5px;
+  text-align: center;
 }
+
