@@ -1,6 +1,6 @@
 .CurrentWeather {
   grid-area: CurrentWeather;
-  color: green;
+  color: midnightblue;
 
 }
 h1 {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .description {
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -31,7 +31,7 @@ img {
 
 .update {
   margin-right: 5px;
-  font-size: 2em;
+  font-size: 2rem;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -44,6 +44,12 @@ img {
 
 .high {
   margin-right: 5px;
+}
+
+.location {
+  margin-top: 25px;
+  color: midnightblue;
+  font-size: 2.5rem
 }
 
 
